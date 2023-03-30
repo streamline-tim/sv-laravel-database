@@ -629,7 +629,7 @@ class Builder {
 	 */
 	public function addNestedWhereQuery($query, $boolean = 'and')
 	{
-		if (count($query->wheres))
+		if (count(is_countable($query->wheres) ? $query->wheres : []))
 		{
 			$type = 'Nested';
 
